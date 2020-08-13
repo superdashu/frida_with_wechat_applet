@@ -33,7 +33,18 @@ $ frida WeChat.exe -l hook.js
 
 通过HOOK `WeChatAppHost.dll` 中的 `EncryptBufToFile` 函数, 在加密函数调用之前，拿到未加密的源代码包数据, 加密生成文件后，覆盖生成后的文件实现解密。
 
-这个方法比较取巧，当然有能力的大神可以去硬杠解密算法。
+~~这个方法比较取巧，当然有能力的大神可以去硬杠解密算法。~~
+找到 `BlackTrace` 大神的方案, 继续往下看。
+
+#### wxapkg包 解密工具
+
+这里借鉴了 `BlackTrace` 的 `GO` 版本解密代码, 翻译为 `python` 版本。
+
+传送门: 
+
+- [python版本 戳这里](https://github.com/kksanyu/pc_wxapkg_decrypt_python)
+
+- [GO版本 戳这里](https://github.com/BlackTrace/pc_wxapkg_decrypt)
 
 ### License
 
